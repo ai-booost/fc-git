@@ -8,17 +8,14 @@ def create_boxes():
     """
     pass
 
-def prisoner_strategy(prisoner_number, boxes):
-    """
-    특정 죄수가 자신의 번호를 찾기 위해 상자를 여는 전략을 실행합니다.
-    - 역할: 두 번째 사람은 이 함수를 작성합니다.
-    - 전략: 자신의 번호를 따라가는 루프 전략을 사용합니다.
-    - 입력:
-        prisoner_number: 죄수의 번호 (1부터 100까지)
-        boxes: 상자 배열
-    - 출력: True(성공) 또는 False(실패)
-    """
-    pass
+def prisoner_strategy(prisoner_number, boxes): #2번째 함수 정의
+    attempts = 50 
+    current_box = prisoner_number
+    for _ in range(attempts):
+        if boxes[current_box -1] == prisoner_number:
+            return True
+        current_box = boxed[current_box - 1]
+    return False
 
 def simulate_game():
     """
@@ -39,3 +36,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
